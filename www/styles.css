@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    background: linear-gradient(180deg, #B8D4E8 0%, #D4E8F5 100%);
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: transparent;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #333;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+    font-weight: 300;
+}
+
+.all-passes-link {
+    color: #333;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 15px;
+    min-height: calc(100vh - 70px);
+}
+
+/* Pass Card */
+.pass-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Pass Header */
+.pass-header {
+    background: #DD4A4A;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.pass-header h1 {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Pass Content */
+.pass-content {
+    padding: 22px 28px;
+    position: relative;
+}
+
+/* ID and Fare Section - Redesigned to match screenshot exactly */
+.id-fare-section {
+    margin-bottom: 18px;
+}
+
+/* Labels row - ID and Fare on same line */
+.labels-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.label-id,
+.label-fare {
+    color: #888888;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+/* Values row - Name and Price on same line */
+.values-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.name-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: inherit;
+    text-transform: uppercase;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+.fare-value {
+    flex-shrink: 0;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.field-group label {
+    display: block;
+    color: #888888;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 1px;
+    line-height: 1.1;
+}
+
+.field-group .value {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.time-input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+/* Separator with Circular Cutouts */
+.separator {
+    position: relative;
+    border-top: 2px dashed #DDDDDD;
+    margin: 20px -28px;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #C8E0F5;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.separator::before {
+    left: -20px;
+}
+
+.separator::after {
+    right: -20px;
+}
+
+/* Time Section */
+.time-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.time-section .field-group {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+}
+
+.time-section .field-group label {
+    display: block;
+    color: #888888;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 4px;
+    line-height: 1.1;
+}
+
+.time-section .field-group .value {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Pass Number */
+.pass-number {
+    text-align: center;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+}
+
+/* Pass Footer */
+.pass-footer {
+    background: #DD4A4A;
+    padding: 8px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.pass-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30px;
+    right: 30px;
+    border-top: 2px dashed rgba(255, 255, 255, 0.4);
+}
+
+.pass-footer h2 {
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Logo Section */
+.logo-section {
+    padding: 30px 20px;
+    text-align: center;
+    background: transparent;
+}
+
+.logo {
+    max-width: 220px;
+    width: 80%;
+    height: auto;
+    display: inline-block;
+    animation: zoomInOut 2s ease-in-out infinite;
+    background: transparent;
+}
+
+/* Logo Zoom Animation */
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+/* Expiry Timer */
+.expiry-timer {
+    text-align: center;
+    padding: 12px 20px;
+    color: #666666;
+    font-size: 16px;
+    font-weight: 400;
+    background: #F5F5F5;
+}
+
+/* Mobile Optimization */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .pass-card {
+        max-width: 100%;
+    }
+
+    .pass-content {
+        padding: 18px 20px;
+    }
+
+    .separator {
+        margin: 18px -20px;
+    }
+
+    .time-section {
+        gap: 8px;
+        flex-wrap: nowrap;
+    }
+
+    .time-section .field-group {
+        width: auto;
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .time-section .field-group label {
+        font-size: 13px;
+    }
+
+    /* Keep ID and Fare at full size on mobile */
+    .name-input {
+        font-size: 20px;
+    }
+
+    .fare-value {
+        font-size: 20px;
+    }
+
+    .id-fare-section .field-group .value {
+        font-size: 20px;
+        white-space: nowrap;
+    }
+
+    /* Only reduce time section fonts */
+    .time-section .field-group .value {
+        font-size: 13px;
+        line-height: 1.4;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .pass-header h1 {
+        font-size: 20px;
+    }
+
+    .pass-footer h2 {
+        font-size: 15px;
+    }
+
+    .values-row {
+        gap: 8px;
+    }
+}
+
+/* Touch-friendly tap targets */
+.name-input {
+    min-height: 44px;
+}
+
+/* Focus styles */
+.name-input:focus {
+    border-bottom: 2px solid #DD4A4A;
+    padding-bottom: 2px;
+}
+
+/* Hide datetime input spin buttons */
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type="datetime-local"]::-webkit-inner-spin-button,
+input[type="datetime-local"]::-webkit-clear-button {
+    display: none;
+}
